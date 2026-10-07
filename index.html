@@ -3,105 +3,851 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Trimex Connect | CCS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trimex Connect | College of Computer Studies - Trimex Colleges</title>
     <meta name="description"
-        content="Trimex Connect is the CCS portal for enrollment, the CCS Gazette, and student systems.">
+        content="Trimex Connect - Centralized academic and technology portal for the College of Computer Studies, Trimex Colleges. Access CCS-MS, the CCS Gazette, and online enrollment.">
+    <link rel="icon" type="image/x-icon" href="assets/COMPUTER_STUDIES_LOGO.jpg">
+
+    <!-- Fonts: Poppins (Official Trimex Typography) & Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Figtree:wght@400;500;600&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400&family=Inter:wght@400;500;600;700&display=swap"
         rel="stylesheet">
+
+    <!-- Stylesheet -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
-    <header class="site-header">
-        <a class="brand" href="#home">
-            <img src="http://www.trimexconnect.com/tconnect/assets/logo.png" alt="" width="40" height="40">
-            <span>Trimex Connect</span>
-        </a>
-        <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Toggle menu">
-        <label for="nav-toggle" class="nav-burger" aria-hidden="true"><span></span></label>
-        <nav class="nav" aria-label="Main">
-            <a href="#home">Home</a>
-            <a href="#gazette">Gazette</a>
-            <a href="#systems">CCS-MS</a>
-            <a class="nav-cta" href="#enroll">Enroll now</a>
-        </nav>
+
+    <!-- Main Navigation Header -->
+    <header class="main-header" id="navHeader">
+        <div class="site-container nav-container">
+            <a href="#home" class="brand-link" aria-label="Trimex Connect Homepage">
+                <img src="assets/logo.png" alt="Trimex Connect - College of Computer Studies Logo" class="brand-logo">
+            </a>
+
+            <!-- Mobile Nav Toggle -->
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+                aria-controls="primaryNav">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Main Navigation Links & Dropdowns -->
+            <nav id="primaryNav" class="nav-menu" aria-label="Primary site navigation">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="#home" class="nav-link active">HOME</a>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="#gazette" class="nav-link dropdown-toggle" id="gazetteDropdownBtn" aria-haspopup="true"
+                            aria-expanded="false">
+                            GAZETTE <span class="arrow-down" aria-hidden="true">▾</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="gazetteDropdownBtn">
+                            <a href="https://trimexconnect.com/ccs/gazette/" target="_blank" rel="noopener noreferrer"
+                                class="dropdown-item">
+                                <strong>CCS Gazette Vol. 1</strong>
+                                <small>Official Debut Edition</small>
+                            </a>
+                            <a href="#gazette" class="dropdown-item">
+                                <strong>CCS Gazette Vol. 2</strong>
+                                <small>Latest Articles & Coverage</small>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="#gazette" class="dropdown-item text-action">Browse All Stories & Announcements
+                                →</a>
+                        </div>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="#ccs-ms" class="nav-link dropdown-toggle" id="ccsmsDropdownBtn" aria-haspopup="true"
+                            aria-expanded="false">
+                            CCS-MS <span class="arrow-down" aria-hidden="true">▾</span>
+                        </a>
+                        <div class="dropdown-menu mega-dropdown" aria-labelledby="ccsmsDropdownBtn">
+                            <div class="mega-column">
+                                <span class="mega-heading">Research & Learning</span>
+                                <a href="https://trimexconnect.com/capstonethesis/" target="_blank"
+                                    rel="noopener noreferrer" class="dropdown-item">
+                                    Research Management (Capstone)
+                                </a>
+                                <a href="https://trimexconnect.com/researchmanual/" target="_blank"
+                                    rel="noopener noreferrer" class="dropdown-item">
+                                    Official Research Manual
+                                </a>
+                                <a href="https://coderkiosk.com" target="_blank" rel="noopener noreferrer"
+                                    class="dropdown-item">
+                                    CCS Online Compiler (CoderKiosk)
+                                </a>
+                                <a href="https://trimexconnect.com/e-data/" target="_blank" rel="noopener noreferrer"
+                                    class="dropdown-item">
+                                    Data Science Platform
+                                </a>
+                                <a href="https://trimexconnect.com/iskuling/lms/" target="_blank"
+                                    rel="noopener noreferrer" class="dropdown-item">
+                                    CCS LMS Management
+                                </a>
+                            </div>
+                            <div class="mega-column">
+                                <span class="mega-heading">Security & Student Systems</span>
+                                <a href="https://trimexconnect.com/academy/netsec/" target="_blank"
+                                    rel="noopener noreferrer" class="dropdown-item">
+                                    Cybersecurity Arena
+                                </a>
+                                <a href="https://trimexconnect.com/e-hack/" target="_blank" rel="noopener noreferrer"
+                                    class="dropdown-item">
+                                    Educational Cyber Range
+                                </a>
+                                <a href="https://trimexconnect.com/dikoalam/infosec/" target="_blank"
+                                    rel="noopener noreferrer" class="dropdown-item">
+                                    Cybersecurity Training Lab
+                                </a>
+                                <a href="https://trimexconnect.com/voting/acts/" target="_blank"
+                                    rel="noopener noreferrer" class="dropdown-item">
+                                    CCS ACTS Voting System
+                                </a>
+                                <a href="https://trimexconnect.com/ojtms" target="_blank" rel="noopener noreferrer"
+                                    class="dropdown-item">
+                                    CCS OJT Monitoring (OJTMS)
+                                </a>
+                                <a href="https://trimexconnect.com/201ccs" target="_blank" rel="noopener noreferrer"
+                                    class="dropdown-item">
+                                    CCS 201 Student & Faculty Portfolio
+                                </a>
+                            </div>
+                        </div>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="#about" class="nav-link">ABOUT</a>
+                    </li>
+
+                    <li class="nav-item has-dropdown">
+                        <a href="#enroll" class="nav-link btn-enroll" id="enrollDropdownBtn" aria-haspopup="true"
+                            aria-expanded="false">
+                            ENROLL NOW! <span class="arrow-down" aria-hidden="true">▾</span>
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="enrollDropdownBtn">
+                            <a href="#enroll" class="dropdown-item">
+                                <strong>New Students / Freshmen</strong>
+                                <small>Begin your tech education</small>
+                            </a>
+                            <a href="#enroll" class="dropdown-item">
+                                <strong>Old / Continuing Students</strong>
+                                <small>Semester advisement & enrollment</small>
+                            </a>
+                            <a href="#enroll" class="dropdown-item">
+                                <strong>Transferee Students</strong>
+                                <small>Course crediting & admission</small>
+                            </a>
+                            <div class="dropdown-divider"></div>
+                            <a href="https://www.trimexcolleges.edu.ph/online-enrollment" target="_blank"
+                                rel="noopener noreferrer" class="dropdown-item text-action">
+                                Trimex Official Admission Portal ↗
+                            </a>
+                        </div>
+                    </li>
+                </ul>
+            </nav>
+        </div>
     </header>
 
-    <main id="home">
+    <main id="main-content">
+        <!-- Hero Section with Official Trimex Connect UI Video -->
+        <section id="home" class="hero-section">
+            <div class="site-container hero-grid">
+                <!-- Left: Institutional Mission & Portal Directives -->
+                <div class="hero-content">
+                    <div class="hero-badge-wrap">
+                        <span class="institutional-badge">COLLEGE OF COMPUTER STUDIES</span>
+                        <span class="badge-status"><span class="status-indicator"></span> ACADEMIC PORTAL</span>
+                    </div>
 
-        <section class="hero">
-            <div class="hero-copy">
-                <h1>Everything CCS, in one place.</h1>
-                <p>Enroll, read the Gazette, and open every student system from a single page.</p>
-                <div class="hero-links">
-                    <a class="btn btn-primary" href="#enroll">Start enrollment</a>
-                    <a class="btn btn-ghost" href="#systems">Browse systems</a>
+                    <h1 class="hero-title">
+                        Welcome to <span class="brand-highlight">Trimex Connect</span>
+                    </h1>
+
+                    <p class="hero-lead">
+                        The unified digital gateway for the College of Computer Studies at Trimex Colleges. Access
+                        institutional research, explore publications in the CCS Gazette, utilize integrated computing
+                        labs in CCS-MS, and complete online enrollment.
+                    </p>
+
+                    <div class="hero-action-group">
+                        <a href="#ccs-ms" class="btn-primary-maroon">
+                            <span>Explore CCS-MS</span>
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                <path d="M5 12h14M12 5l7 7-7 7" />
+                            </svg>
+                        </a>
+                        <a href="#gazette" class="btn-secondary-outline">
+                            Read Gazette
+                        </a>
+                        <a href="#enroll" class="btn-accent-crimson">
+                            Enroll Now!
+                        </a>
+                    </div>
+
+                    <!-- Quick Academic Metrics -->
+                    <div class="hero-metrics-bar">
+                        <div class="metric-item">
+                            <span class="metric-val" data-counter="14">14</span>
+                            <span class="metric-label">CCS-MS Digital Systems</span>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-item">
+                            <span class="metric-val" data-counter="100">100%</span>
+                            <span class="metric-label">Online Enrollment</span>
+                        </div>
+                        <div class="metric-divider"></div>
+                        <div class="metric-item">
+                            <span class="metric-val">AY 2025–26</span>
+                            <span class="metric-label">College of Computer Studies</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right: Trimex Connect Official UI Video Showcase -->
+                <div class="hero-media-card">
+                    <div class="media-window-header">
+                        <div class="window-controls">
+                            <span class="win-btn red"></span>
+                            <span class="win-btn yellow"></span>
+                            <span class="win-btn green"></span>
+                        </div>
+                        <div class="window-title">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
+                                <line x1="8" y1="21" x2="16" y2="21" />
+                                <line x1="12" y1="17" x2="12" y2="21" />
+                            </svg>
+                            <span>Trimex Connect UI Video & Interactive Experience</span>
+                        </div>
+                        <div class="window-tag">
+                            <span class="tag-live-dot"></span> LIVE UI
+                        </div>
+                    </div>
+
+                    <div class="media-container" id="videoContainer">
+                        <!-- Official Trimex Connect UI Video (Animated Graphic) -->
+                        <img src="assets/gif.gif" alt="Trimex Connect Official UI Interface Video Demonstration"
+                            class="hero-ui-video" id="uiVideoPlayer" loading="eager">
+
+                        <!-- UI Video Caption Overlay -->
+                        <div class="media-overlay-bar">
+                            <div class="media-info">
+                                <span class="media-badge">TRIMEX CONNECT SYSTEM WALKTHROUGH</span>
+                                <span class="media-desc">Official UI demonstration for College of Computer Studies
+                                    portal</span>
+                            </div>
+                            <div class="media-actions">
+                                <button type="button" class="media-ctrl-btn" id="modalVideoTrigger"
+                                    title="View in modal">
+                                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <polyline points="15 3 21 3 21 9" />
+                                        <polyline points="9 21 3 21 3 15" />
+                                        <line x1="21" y1="3" x2="14" y2="10" />
+                                        <line x1="3" y1="21" x2="10" y2="14" />
+                                    </svg>
+                                    <span>Expand</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="media-card-footer">
+                        <div class="portal-feature-pill">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg>
+                            <span>Cyber Range & Security Labs</span>
+                        </div>
+                        <div class="portal-feature-pill">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <polyline points="16 18 22 12 16 6" />
+                                <polyline points="8 6 2 12 8 18" />
+                            </svg>
+                            <span>Integrated Compiler</span>
+                        </div>
+                        <div class="portal-feature-pill">
+                            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                            </svg>
+                            <span>Capstone Repository</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CCS-MS: Integrated College Management Systems Directory -->
+        <section id="ccs-ms" class="content-section bg-secondary">
+            <div class="site-container">
+                <div class="section-header-centered">
+                    <span class="subheading-tag">CCS-MS PLATFORMS</span>
+                    <h2 class="section-title">College of Computer Studies Management Systems</h2>
+                    <p class="section-lead">
+                        Direct access to the academic platforms, research tools, security environments, and student
+                        management systems powered by Trimex Connect.
+                    </p>
+                </div>
+
+                <div class="systems-grid">
+                    <!-- Research Management System -->
+                    <article class="system-card">
+                        <div class="system-card-top">
+                            <div class="icon-box maroon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20" />
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
+                                </svg>
+                            </div>
+                            <span class="system-status-pill online">Active</span>
+                        </div>
+                        <h3 class="system-title">Research Management (Capstone)</h3>
+                        <p class="system-desc">Central repository for capstone proposals, manuscript defenses, adviser
+                            reviews, and academic thesis submissions.</p>
+                        <div class="system-links">
+                            <a href="https://trimexconnect.com/capstonethesis/" target="_blank"
+                                rel="noopener noreferrer" class="system-link">Launch Portal →</a>
+                            <a href="https://trimexconnect.com/researchmanual/" target="_blank"
+                                rel="noopener noreferrer" class="system-link secondary">Research Manual</a>
+                        </div>
+                    </article>
+
+                    <!-- CCS Online Compiler -->
+                    <article class="system-card">
+                        <div class="system-card-top">
+                            <div class="icon-box maroon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <polyline points="16 18 22 12 16 6" />
+                                    <polyline points="8 6 2 12 8 18" />
+                                </svg>
+                            </div>
+                            <span class="system-status-pill online">Active</span>
+                        </div>
+                        <h3 class="system-title">CCS Online Compiler (CoderKiosk)</h3>
+                        <p class="system-desc">Browser-based multi-language code development and evaluation workspace
+                            for programming laboratory assignments.</p>
+                        <div class="system-links">
+                            <a href="https://coderkiosk.com" target="_blank" rel="noopener noreferrer"
+                                class="system-link">Open CoderKiosk →</a>
+                        </div>
+                    </article>
+
+                    <!-- Cyber Range & NetSec Arena -->
+                    <article class="system-card">
+                        <div class="system-card-top">
+                            <div class="icon-box maroon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                                    <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                                </svg>
+                            </div>
+                            <span class="system-status-pill lab">Lab Range</span>
+                        </div>
+                        <h3 class="system-title">Cybersecurity Arena & Range</h3>
+                        <p class="system-desc">Simulated defensive and offensive security environment for information
+                            security students, ethical hacking, and network defense.</p>
+                        <div class="system-links">
+                            <a href="https://trimexconnect.com/academy/netsec/" target="_blank"
+                                rel="noopener noreferrer" class="system-link">Arena Login →</a>
+                            <a href="https://trimexconnect.com/e-hack/" target="_blank" rel="noopener noreferrer"
+                                class="system-link secondary">Cyber Range</a>
+                        </div>
+                    </article>
+
+                    <!-- CCS LMS -->
+                    <article class="system-card">
+                        <div class="system-card-top">
+                            <div class="icon-box maroon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                                    <path d="M6 12v5c3 3 9 3 12 0v-5" />
+                                </svg>
+                            </div>
+                            <span class="system-status-pill online">Active</span>
+                        </div>
+                        <h3 class="system-title">CCS LMS Management</h3>
+                        <p class="system-desc">Dedicated learning management platform for lecture modules, laboratory
+                            exercises, syllabus trackers, and grading submissions.</p>
+                        <div class="system-links">
+                            <a href="https://trimexconnect.com/iskuling/lms/" target="_blank" rel="noopener noreferrer"
+                                class="system-link">Access LMS →</a>
+                        </div>
+                    </article>
+
+                    <!-- ACTS Voting System -->
+                    <article class="system-card">
+                        <div class="system-card-top">
+                            <div class="icon-box maroon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <polyline points="9 11 12 14 22 4" />
+                                    <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" />
+                                </svg>
+                            </div>
+                            <span class="system-status-pill online">Active</span>
+                        </div>
+                        <h3 class="system-title">CCS ACTS Voting System</h3>
+                        <p class="system-desc">Cryptographically authenticated electronic voting platform for college
+                            organization elections, student governance, and ACSE polls.</p>
+                        <div class="system-links">
+                            <a href="https://trimexconnect.com/voting/acts/" target="_blank" rel="noopener noreferrer"
+                                class="system-link">Go to Voting →</a>
+                            <a href="https://trimexconnect.com/voting/acse/" target="_blank" rel="noopener noreferrer"
+                                class="system-link secondary">ACSE Portal</a>
+                        </div>
+                    </article>
+
+                    <!-- OJT Monitoring System -->
+                    <article class="system-card">
+                        <div class="system-card-top">
+                            <div class="icon-box maroon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                                    <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                                    <circle cx="8.5" cy="7" r="4" />
+                                    <line x1="20" y1="8" x2="20" y2="14" />
+                                    <line x1="23" y1="11" x2="17" y2="11" />
+                                </svg>
+                            </div>
+                            <span class="system-status-pill online">Active</span>
+                        </div>
+                        <h3 class="system-title">CCS OJT & Internship Monitoring</h3>
+                        <p class="system-desc">Industry practicum tracking system for student intern hours, company
+                            evaluations, supervisor verifications, and certification.</p>
+                        <div class="system-links">
+                            <a href="https://trimexconnect.com/ojtms" target="_blank" rel="noopener noreferrer"
+                                class="system-link">Internship Log →</a>
+                            <a href="https://trimexconnect.com/201ccs" target="_blank" rel="noopener noreferrer"
+                                class="system-link secondary">201 Portfolio</a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- GAZETTE: College of Computer Studies Official Publication -->
+        <section id="gazette" class="content-section">
+            <div class="site-container">
+                <div class="section-header-flex">
+                    <div>
+                        <span class="subheading-tag">COLLEGE PUBLICATION</span>
+                        <h2 class="section-title">The CCS Gazette</h2>
+                        <p class="section-lead">Official stories, research milestones, technology insights, and campus
+                            announcements.</p>
+                    </div>
+                    <div class="gazette-volume-badges">
+                        <a href="https://trimexconnect.com/ccs/gazette/" target="_blank" rel="noopener noreferrer"
+                            class="volume-badge active">
+                            <span>CCS Gazette Vol. 1</span>
+                            <span class="vol-tag">Official PDF ↗</span>
+                        </a>
+                        <span class="volume-badge">
+                            <span>CCS Gazette Vol. 2</span>
+                            <span class="vol-tag">In Press</span>
+                        </span>
+                    </div>
+                </div>
+
+                <!-- Story Category Filters -->
+                <div class="category-filter-bar" role="group" aria-label="Filter CCS Gazette stories">
+                    <button type="button" class="filter-btn active" data-filter="all">All Stories</button>
+                    <button type="button" class="filter-btn" data-filter="news">Enrollment & News</button>
+                    <button type="button" class="filter-btn" data-filter="academics">Academics & Research</button>
+                    <button type="button" class="filter-btn" data-filter="tech">Cybersecurity & Tech</button>
+                    <button type="button" class="filter-btn" data-filter="campus">Student Life</button>
+                </div>
+
+                <!-- Gazette Articles Grid -->
+                <div class="gazette-grid" id="gazetteArticles">
+                    <!-- Article 1: Featured -->
+                    <article class="story-card featured" data-category="news">
+                        <div class="story-category-tag maroon">Enrollment & Admissions</div>
+                        <h3 class="story-headline">College of Computer Studies Formalizes AY 2025–2026 Online Enrollment
+                            Guidelines</h3>
+                        <p class="story-summary">
+                            The Dean’s Office announces streamlined digital enrollment across BS Information Technology,
+                            BS Computer Science, and Associate programs through the Trimex Connect portal.
+                        </p>
+                        <div class="story-meta">
+                            <span class="author">CCS Academic Affairs</span>
+                            <span class="bullet">•</span>
+                            <span class="date">October 2025</span>
+                            <span class="bullet">•</span>
+                            <span class="read-time">3 min read</span>
+                        </div>
+                    </article>
+
+                    <!-- Article 2 -->
+                    <article class="story-card" data-category="tech">
+                        <div class="story-category-tag">Cybersecurity & Tech</div>
+                        <h3 class="story-headline">Educational Cyber Range Inaugurated for NetSec Hands-On Training</h3>
+                        <p class="story-summary">
+                            Students gain real-world security practice with simulated vulnerability hunting and
+                            defensive posture hardening within Trimex Connect's dedicated range.
+                        </p>
+                        <div class="story-meta">
+                            <span class="author">Cyber Defense Club</span>
+                            <span class="bullet">•</span>
+                            <span class="date">September 2025</span>
+                        </div>
+                    </article>
+
+                    <!-- Article 3 -->
+                    <article class="story-card" data-category="academics">
+                        <div class="story-category-tag">Academics & Research</div>
+                        <h3 class="story-headline">Senior Capstone & Thesis Defense Schedule Released on CCS-MS</h3>
+                        <p class="story-summary">
+                            Advisers and candidates can now inspect defense panels, review manuscript rubrics, and
+                            upload revised documentation directly in the research module.
+                        </p>
+                        <div class="story-meta">
+                            <span class="author">CCS Research Committee</span>
+                            <span class="bullet">•</span>
+                            <span class="date">September 2025</span>
+                        </div>
+                    </article>
+
+                    <!-- Article 4 -->
+                    <article class="story-card" data-category="campus">
+                        <div class="story-category-tag">Student Life</div>
+                        <h3 class="story-headline">CCS ACTS Annual General Assembly & Student Organization Elections
+                        </h3>
+                        <p class="story-summary">
+                            Student leaders urge all computing majors to participate in the upcoming digital election
+                            cycle powered by the ACTS Voting System.
+                        </p>
+                        <div class="story-meta">
+                            <span class="author">ACTS Student Council</span>
+                            <span class="bullet">•</span>
+                            <span class="date">August 2025</span>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT: Project Context & Front-End Designer -->
+        <section id="about" class="content-section bg-secondary">
+            <div class="site-container">
+                <div class="section-header-centered">
+                    <span class="subheading-tag">FRONT-END DESIGN PROFILE</span>
+                    <h2 class="section-title">About</h2>
+                    <p class="section-lead">
+                        Developed as an authentic front-end laboratory project adopting the official branding, visual
+                        architecture, and functional ecosystem of Trimex Connect.
+                    </p>
+                </div>
+
+                <div class="designer-card">
+                    <div class="designer-card-header">
+                        <div class="designer-avatar">
+                            <span class="avatar-initials">CCS</span>
+                        </div>
+                        <div class="designer-header-info">
+                            <h3 class="designer-name">Front-End Designer</h3>
+                            <p class="designer-role">College of Computer Studies • Web Development Laboratory</p>
+                        </div>
+                        <div class="designer-tag">
+                            <span>Project Submission</span>
+                        </div>
+                    </div>
+
+                    <div class="designer-details-grid">
+                        <div class="detail-item">
+                            <span class="detail-label">Designer Name</span>
+                            <span class="detail-value">Sanchez, Mark Cyruss L.</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Degree Program</span>
+                            <span class="detail-value">Bachelor of Science in Information Technology (BSIT)</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Course / Subject</span>
+                            <span class="detail-value">Mobile and Web Development</span>
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Adviser / Professor</span>
+                            <span class="detail-value">Dr. Louie Agustin</span>
+                        </div>
+                    </div>
+
+                    <div class="designer-statement">
+                        <h4>Design & Branding Implementation Statement</h4>
+                        <p>
+                            This project adopts the official design identity of <strong>Trimex Connect</strong> (College
+                            of Computer Studies, Trimex Colleges). The design strictly avoids generic AI aesthetics—such
+                            as synthetic neon blur blobs or artificial floating emojis—in favor of a purposeful
+                            institutional palette (Trimex deep maroon, cardinal red, charcoal slate, and crisp white),
+                            typography powered by Google Font <em>Poppins</em>, the official Trimex Connect logo, and
+                            the authentic portal UI walkthrough animation.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ENROLLMENT: Interactive Application Portal -->
+        <section id="enroll" class="content-section">
+            <div class="site-container">
+                <div class="enrollment-wrapper">
+                    <!-- Left: Instructions & Program Offerings -->
+                    <div class="enrollment-info">
+                        <span class="subheading-tag">ADMISSIONS & ENROLLMENT</span>
+                        <h2 class="section-title">Start Your Journey at Trimex Colleges</h2>
+                        <p class="section-lead">
+                            Join the College of Computer Studies. Select your program and submit your initial student
+                            profile to begin academic advisement.
+                        </p>
+
+                        <div class="programs-offered">
+                            <div class="program-item">
+                                <div class="prog-dot"></div>
+                                <div>
+                                    <strong>BS Information Technology (BSIT)</strong>
+                                    <p>Network security, web systems, database engineering, and software solutions.</p>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <div class="prog-dot"></div>
+                                <div>
+                                    <strong>BS Computer Science (BSCS)</strong>
+                                    <p>Algorithm analysis, artificial intelligence, discrete systems, and computing
+                                        theory.</p>
+                                </div>
+                            </div>
+                            <div class="program-item">
+                                <div class="prog-dot"></div>
+                                <div>
+                                    <strong>Associate in Computer Technology (ACT)</strong>
+                                    <p>Hands-on practical hardware, software installation, and IT operational support.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="admissions-notice">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                stroke-width="2" aria-hidden="true">
+                                <circle cx="12" cy="12" r="10" />
+                                <line x1="12" y1="16" x2="12" y2="12" />
+                                <line x1="12" y1="8" x2="12.01" y2="8" />
+                            </svg>
+                            <p>For official document assessment, you may also proceed directly to the <a
+                                    href="https://www.trimexcolleges.edu.ph/online-enrollment" target="_blank"
+                                    rel="noopener noreferrer">Trimex Colleges Official Registrar Portal ↗</a>.</p>
+                        </div>
+                    </div>
+
+                    <!-- Right: Enrollment Application Form -->
+                    <div class="enrollment-form-card">
+                        <h3 class="form-title">Student Enrollment Registration</h3>
+                        <p class="form-sub">Please fill in your authentic student information.</p>
+
+                        <form id="enrollmentForm" class="institutional-form" novalidate>
+                            <div class="form-row">
+                                <label for="studentType" class="field-label">Student Classification *</label>
+                                <select id="studentType" class="field-input" required>
+                                    <option value="">Select student type</option>
+                                    <option value="new">New Student / Incoming Freshman</option>
+                                    <option value="old">Old / Continuing Student</option>
+                                    <option value="transferee">Transferee Student</option>
+                                    <option value="second_degree">Second Degree Candidate</option>
+                                </select>
+                                <span class="error-msg" id="err-studentType"></span>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="fullName" class="field-label">Full Name *</label>
+                                <input type="text" id="fullName" class="field-input" placeholder="e.g. Juan Dela Cruz"
+                                    autocomplete="name" required>
+                                <span class="error-msg" id="err-fullName"></span>
+                            </div>
+
+                            <div class="form-row-group">
+                                <div class="form-row">
+                                    <label for="emailAddr" class="field-label">Email Address *</label>
+                                    <input type="email" id="emailAddr" class="field-input"
+                                        placeholder="e.g. juan@example.com" autocomplete="email" required>
+                                    <span class="error-msg" id="err-emailAddr"></span>
+                                </div>
+                                <div class="form-row">
+                                    <label for="contactNo" class="field-label">Contact Number *</label>
+                                    <input type="tel" id="contactNo" class="field-input"
+                                        placeholder="e.g. 0917-123-4567" autocomplete="tel" required>
+                                    <span class="error-msg" id="err-contactNo"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="chosenProgram" class="field-label">Academic Program *</label>
+                                <select id="chosenProgram" class="field-input" required>
+                                    <option value="">Select desired degree program</option>
+                                    <option value="BSIT">BS Information Technology (BSIT)</option>
+                                    <option value="BSCS">BS Computer Science (BSCS)</option>
+                                    <option value="BSIS">BS Information Systems (BSIS)</option>
+                                    <option value="ACT">Associate in Computer Technology (ACT)</option>
+                                </select>
+                                <span class="error-msg" id="err-chosenProgram"></span>
+                            </div>
+
+                            <div class="form-row">
+                                <label for="studyShift" class="field-label">Preferred Class Schedule</label>
+                                <select id="studyShift" class="field-input">
+                                    <option value="Day">Day Shift (Regular Classes)</option>
+                                    <option value="Evening">Evening Shift (Working Students)</option>
+                                    <option value="Weekend">Weekend Hybrid Class</option>
+                                </select>
+                            </div>
+
+                            <div class="form-actions">
+                                <button type="submit" class="btn-submit-enroll">
+                                    <span>Submit Enrollment Application</span>
+                                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                        stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                                        aria-hidden="true">
+                                        <polyline points="9 18 15 12 9 6" />
+                                    </svg>
+                                </button>
+                            </div>
+
+                            <!-- Success status banner -->
+                            <div id="formSuccessAlert" class="status-alert success" role="alert" hidden>
+                                <div class="alert-icon">✓</div>
+                                <div class="alert-text">
+                                    <strong>Application Received!</strong>
+                                    <p id="successNoticeText">Your student enrollment details have been recorded for
+                                        academic evaluation. An adviser will review your submission.</p>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Institutional Footer matching Trimex Connect -->
+    <footer class="site-footer">
+        <div class="site-container">
+            <div class="footer-grid">
+                <!-- Branding & College Mission -->
+                <div class="footer-brand-col">
+                    <img src="assets/logo.png" alt="Trimex Connect Logo" class="footer-logo">
+                    <p class="footer-mission">
+                        Trimex Connect is the centralized portal of the College of Computer Studies, empowering students
+                        and faculty with modern academic and technological services.
+                    </p>
+                    <div class="college-info-lines">
+                        <p><strong>Trimex Colleges</strong></p>
+                        <p>Biñan City, Laguna, Philippines</p>
+                    </div>
+                </div>
+
+                <!-- Navigation Links -->
+                <div class="footer-links-col">
+                    <h4 class="footer-col-title">Portal Navigation</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="#home">Home Portal</a></li>
+                        <li><a href="#gazette">The CCS Gazette</a></li>
+                        <li><a href="#ccs-ms">CCS-MS Directory</a></li>
+                        <li><a href="#about">Front-End Design Profile</a></li>
+                        <li><a href="#enroll">Online Enrollment</a></li>
+                    </ul>
+                </div>
+
+                <!-- CCS-MS Services Links -->
+                <div class="footer-links-col">
+                    <h4 class="footer-col-title">CCS-MS Modules</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="https://trimexconnect.com/capstonethesis/" target="_blank"
+                                rel="noopener noreferrer">Research Management System</a></li>
+                        <li><a href="https://coderkiosk.com" target="_blank" rel="noopener noreferrer">CCS Online
+                                Compiler</a></li>
+                        <li><a href="https://trimexconnect.com/academy/netsec/" target="_blank"
+                                rel="noopener noreferrer">Cybersecurity Arena</a></li>
+                        <li><a href="https://trimexconnect.com/iskuling/lms/" target="_blank"
+                                rel="noopener noreferrer">LMS Management</a></li>
+                        <li><a href="https://trimexconnect.com/voting/acts/" target="_blank"
+                                rel="noopener noreferrer">ACTS Student Voting</a></li>
+                        <li><a href="https://trimexconnect.com/ojtms" target="_blank" rel="noopener noreferrer">OJT
+                                Monitoring</a></li>
+                    </ul>
+                </div>
+
+                <!-- Official Enrollment & Registrar -->
+                <div class="footer-links-col">
+                    <h4 class="footer-col-title">Admissions & Registrar</h4>
+                    <ul class="footer-nav-list">
+                        <li><a href="https://www.trimexcolleges.edu.ph/online-enrollment" target="_blank"
+                                rel="noopener noreferrer">Official Online Enrollment ↗</a></li>
+                        <li><a href="https://www.trimexcolleges.edu.ph" target="_blank" rel="noopener noreferrer">Trimex
+                                Colleges Main Website ↗</a></li>
+                        <li><a href="#enroll">Freshmen Application</a></li>
+                        <li><a href="#enroll">Transferee Inquiries</a></li>
+                    </ul>
                 </div>
             </div>
 
-            <aside class="enroll" id="enroll" aria-labelledby="enroll-title">
-                <h2 id="enroll-title">Enroll now</h2>
-                <p>Choose the option that matches your status.</p>
-                <a class="enroll-row" href="#"><strong>New students</strong><span>First time at CCS</span></a>
-                <a class="enroll-row" href="#"><strong>Old students</strong><span>Continuing your program</span></a>
-                <a class="enroll-row" href="#"><strong>Transferee students</strong><span>Coming from another
-                        school</span></a>
-            </aside>
-        </section>
-
-        <section class="section" id="systems">
-            <div class="section-head">
-                <h2>CCS-MS systems</h2>
-                <p>Each system opens in its own site. Bookmark the ones you use most.</p>
+            <div class="footer-bottom-bar">
+                <p class="copyright-text">
+                    CCS &copy; <span id="copyrightYear">2025</span> TRIMEX CONNECT. College of Computer Studies • Trimex
+                    Colleges. All Rights Reserved.
+                </p>
+                <div class="footer-bottom-links">
+                    <a href="#home">Back to Top ↑</a>
+                </div>
             </div>
-            <ul class="systems">
-                <li><a href="https://trimexconnect.com/researchmanual/"><b>Research Manual</b><span>Guidelines for CCS
-                            research</span></a></li>
-                <li><a href="https://trimexconnect.com/ojtms"><b>OJT Monitoring</b><span>Track on-the-job
-                            training</span></a></li>
-                <li><a href="https://trimexconnect.com/ams"><b>Academic Management</b><span>Records and
-                            academics</span></a></li>
-                <li><a href="https://trimexconnect.com/ssc"><b>Voting System</b><span>Student council
-                            elections</span></a></li>
-                <li><a href="https://trimexconnect.com/trimextalk"><b>Trimex Talk</b><span>Student
-                            conversations</span></a></li>
-                <li><a href="https://doclouie.com/alumni"><b>Alumni Organization</b><span>Stay connected after
-                            graduation</span></a></li>
-                <li><a href="https://doclouie.com/jobsky"><b>Jobsky</b><span>Find jobs and internships</span></a></li>
-                <li><a href="https://doclouie.com/codexms"><b>CodexMS</b><span>Learning management</span></a></li>
-            </ul>
-        </section>
-
-        <section class="section section-alt" id="gazette">
-            <div class="section-head">
-                <h2>CCS Gazette</h2>
-                <p>News, features, and stories from the college.</p>
-            </div>
-            <div class="issues">
-                <a class="issue issue-1" href="https://trimexconnect.com/ccs/gazette/">
-                    <span class="issue-vol">Vol. 1</span>
-                    <strong>CCS Gazette</strong>
-                    <span>Read the issue</span>
-                </a>
-                <a class="issue issue-2" href="#">
-                    <span class="issue-vol">Vol. 2</span>
-                    <strong>CCS Gazette</strong>
-                    <span>Coming soon</span>
-                </a>
-            </div>
-        </section>
-
-    </main>
-
-    <footer class="site-footer">
-        <p>CCS &copy; Trimex Connect 2025</p>
+        </div>
     </footer>
 
+    <!-- Video Modal for Detailed Walkthrough -->
+    <div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-label="Trimex Connect UI Video Player"
+        hidden>
+        <div class="modal-backdrop" id="modalBackdrop"></div>
+        <div class="modal-content-box">
+            <div class="modal-header">
+                <div class="modal-title-wrap">
+                    <span class="live-dot-pulse"></span>
+                    <h3>Trimex Connect UI Video Demonstration</h3>
+                </div>
+                <button type="button" class="modal-close-btn" id="modalCloseBtn"
+                    aria-label="Close modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="assets/gif.gif" alt="Trimex Connect Portal UI Interface Detailed Demonstration"
+                    class="modal-video-display">
+            </div>
+            <div class="modal-footer">
+                <p>Official background UI video demo of Trimex Connect portal ecosystem.</p>
+                <button type="button" class="btn-secondary-outline sm" id="modalCloseActionBtn">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
