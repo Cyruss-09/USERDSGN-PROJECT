@@ -20,47 +20,120 @@
         yrEl.textContent = new Date().getFullYear();
     }
 
-    // Mobile Navigation & Submenu Toggle
+    // Mobile Navigation, Backdrop & Submenu Accordion
     var navToggle = $('#navToggle');
     var primaryNav = $('#primaryNav');
+    var navBackdrop = $('#navBackdrop');
+    var backToTopBtn = $('#backToTopBtn');
+    var mobileBarItems = $$('.mobile-bar-item');
+
+    function closeMobileNav() {
+        if (!primaryNav) return;
+        primaryNav.classList.remove('is-open');
+        if (navToggle) {
+            navToggle.classList.remove('is-active');
+            navToggle.setAttribute('aria-expanded', 'false');
+        }
+        if (navBackdrop) {
+            navBackdrop.classList.remove('is-active');
+        }
+        document.body.classList.remove('nav-open');
+    }
+
+    function openMobileNav() {
+        if (!primaryNav) return;
+        primaryNav.classList.add('is-open');
+        if (navToggle) {
+            navToggle.classList.add('is-active');
+            navToggle.setAttribute('aria-expanded', 'true');
+        }
+        if (navBackdrop) {
+            navBackdrop.classList.add('is-active');
+        }
+        document.body.classList.add('nav-open');
+    }
 
     if (navToggle && primaryNav) {
         navToggle.addEventListener('click', function () {
-            var isOpen = primaryNav.classList.toggle('is-open');
-            navToggle.setAttribute('aria-expanded', String(isOpen));
+            if (primaryNav.classList.contains('is-open')) {
+                closeMobileNav();
+            } else {
+                openMobileNav();
+            }
         });
+
+        if (navBackdrop) {
+            navBackdrop.addEventListener('click', closeMobileNav);
+        }
 
         // Close mobile nav on Esc key
         document.addEventListener('keydown', function (e) {
             if (e.key === 'Escape' && primaryNav.classList.contains('is-open')) {
-                primaryNav.classList.remove('is-open');
-                navToggle.setAttribute('aria-expanded', 'false');
+                closeMobileNav();
             }
         });
 
-        // Close on link click if not dropdown toggle
-        $$('.nav-link:not(.dropdown-toggle)', primaryNav).forEach(function (link) {
-            link.addEventListener('click', function () {
+        // Close on in-page anchor click
+        $$('a[href^="#"]', primaryNav).forEach(function (link) {
+            link.addEventListener('click', function (e) {
+                // If this is a dropdown toggle on mobile, let the dropdown toggle handler deal with it
+                if (window.innerWidth <= 768 && link.classList.contains('dropdown-toggle')) {
+                    return;
+                }
                 if (window.innerWidth <= 768) {
-                    primaryNav.classList.remove('is-open');
-                    navToggle.setAttribute('aria-expanded', 'false');
+                    closeMobileNav();
                 }
             });
         });
 
-        // Mobile dropdown click toggle
+        // Mobile dropdown click toggle (with clean single-accordion behavior)
         $$('.has-dropdown').forEach(function (item) {
             var toggleLink = item.querySelector('.dropdown-toggle');
             if (toggleLink) {
                 toggleLink.addEventListener('click', function (e) {
                     if (window.innerWidth <= 768) {
                         e.preventDefault();
+                        e.stopPropagation();
+                        // Close any other open mobile submenus for a clean accordion effect
+                        $$('.has-dropdown').forEach(function (otherItem) {
+                            if (otherItem !== item) {
+                                otherItem.classList.remove('mobile-expanded');
+                                var otherToggle = otherItem.querySelector('.dropdown-toggle');
+                                if (otherToggle) otherToggle.setAttribute('aria-expanded', 'false');
+                            }
+                        });
                         item.classList.toggle('mobile-expanded');
                         var expanded = item.classList.contains('mobile-expanded');
                         toggleLink.setAttribute('aria-expanded', String(expanded));
                     }
                 });
             }
+        });
+
+        // Auto close if window is resized above 768px
+        window.addEventListener('resize', function () {
+            if (window.innerWidth > 768 && primaryNav.classList.contains('is-open')) {
+                closeMobileNav();
+            }
+        }, { passive: true });
+    }
+
+    // Floating Back to Top Button
+    if (backToTopBtn) {
+        backToTopBtn.addEventListener('click', function (e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    if (mobileBarItems.length > 0) {
+        mobileBarItems.forEach(function (item) {
+            item.addEventListener('click', function () {
+                closeMobileNav();
+            });
         });
     }
 
@@ -99,6 +172,27 @@
                 link.classList.remove('active');
             }
         });
+
+        // Update Mobile Bottom Bar active state
+        if (mobileBarItems.length > 0) {
+            mobileBarItems.forEach(function (mItem) {
+                var target = mItem.getAttribute('data-target');
+                if (target === currentSectionId) {
+                    mItem.classList.add('active');
+                } else {
+                    mItem.classList.remove('active');
+                }
+            });
+        }
+
+        // Toggle Floating Back to Top Button visibility
+        if (backToTopBtn) {
+            if (window.scrollY > 350) {
+                backToTopBtn.classList.add('is-visible');
+            } else {
+                backToTopBtn.classList.remove('is-visible');
+            }
+        }
     }
 
     window.addEventListener('scroll', updateActiveNavLink, { passive: true });
