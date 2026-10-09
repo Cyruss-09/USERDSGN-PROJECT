@@ -17,11 +17,23 @@ trimex-redesign/
 └── README.md             # This file
 ```
 
-## How to Run
+## How to Run (Using a Web Browser from the IDE)
 
-1. Keep all files in the same folder.
-2. Open `index.html` in any modern browser (Chrome, Edge, Firefox, Safari).
-3. No installation or internet connection is needed.
+### Option 1: Live Server (recommended)
+1. Open the project folder in the IDE (**File > Open Folder**).
+2. Install the **Live Server** extension if it isn't installed yet (Extensions icon in the left sidebar, search "Live Server").
+3. Right-click `index.html` in the Explorer and choose **Open with Live Server**,
+   or click **Go Live** in the bottom-right status bar.
+4. The website opens in your default web browser (for example, Microsoft Edge)
+   at an address like `http://127.0.0.1:5500`.
+5. Edit and save any file. The page refreshes automatically.
+6. To stop the server, click the **Port: 5500** button in the status bar.
+
+### Option 2: Open the file directly
+1. Right-click `index.html` in the Explorer and choose **Reveal in File Explorer**.
+2. Double-click `index.html`, or right-click it and choose **Open with > Microsoft Edge**.
+
+> Keep the project folder structure unchanged (`index.html`, `script.js`, `chatbot.js`, and the `css/` and `assets/` folders). If you move `index.html` out of the folder, the styles and images won't load.
 
 ## Main Menu
 
